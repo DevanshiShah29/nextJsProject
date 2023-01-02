@@ -1,0 +1,240 @@
+
+*{
+	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  // Adding to prevent blue highlighting on Tap in Mobile devices
+    
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -moz-tap-highlight-color: rgba(0,0,0,0);
+  -ms-tap-highlight-color: rgba(0,0,0,0);
+  -o-tap-highlight-color: rgba(0,0,0,0);
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  
+  border: 0;
+  // font-size: 100%;
+  vertical-align: baseline;
+  word-wrap: break-word;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  font-family: $font_family !important;
+  font-weight: $regular;
+  font-size: $medium;
+  color: $black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $background !important;
+  @include mq('phone'){
+    font-size: 14px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: $font_family;
+  font-weight: $bold;
+}
+
+h1{
+  font-size: 32px;
+}
+
+h2{
+  font-size: 30px;
+}
+
+h3{
+  font-size: 28px;
+}
+
+h4{
+  font-size: 26px;
+}
+
+h5{
+  font-size: 24px;
+}
+
+h6{
+  font-size: 22px;
+}
+
+
+a{
+  outline: none;
+  transition: all 200ms linear;
+  text-decoration: none;
+  color: $black;
+}
+
+
+p{
+  font-weight: $light;
+  font-family: $font_family;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-bottom: 15px;
+  font-size: $medium;
+  line-height: 27px;
+  @include mq('phone'){
+    font-size: 16px;
+    line-height: 24px;
+  }
+  @include mq('tablet'){
+    font-size: 16px;
+  } 
+}
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+span{
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  max-width:100%;
+  display: block;
+}
+svg{
+  max-width:100%;
+}
+hr{
+  clear: both;
+  content: "";
+  margin: 15px 0px;
+}
+
+.text-center{
+  text-align: center !important;
+}
+.text-left{
+  text-align: left !important;
+}
+.text-right{
+  text-align: right !important;
+}
+.v_hide{
+  visibility:hidden !important;
+}
+.hide{
+  display:none !important;
+}
+
+.sm-hide{
+  @media(max-width:1024px){
+    display:none !important ;
+  }
+}
+.sm-show{
+  @media(min-width:1025px){
+    display:none !important;
+  }
+}
+.xs-hide{
+  @media(max-width:767px){
+    display:none !important;
+  }
+}
+.xs-show{
+  @media(min-width:768px){
+    display:none !important;
+  }
+}
+
+.xs-center{
+  @media(max-width:767px){
+    text-align:center !important; 
+  }
+}
+.xs-left{
+  @media(max-width:767px){
+    text-align:left !important;
+  }
+}
+.xs-right{
+  @media(max-width:767px){
+    text-align:right !important;
+  }
+}
+.sm-center{
+  @media(max-width:1024px){
+    text-align:center !important;
+  }
+}
+.sm-left{
+  @media(max-width:1024px){
+    text-align:left !important;
+  }
+}
+.sm-right{
+  @media(max-width:1024px){
+    text-align:right !important;
+  }
+}
+
+.overflow_hidden{
+  overflow: hidden !important;
+}
+
+
+//  SITE COMMON CLASSES ADDED BELOW. USE THEM FOR COMMON ELEMENTS
+
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+
+
+// Table css starts
+.table-wrapper{
+  overflow-y: visible;
+  overflow-x: auto;
+}
+table{
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  border: 0 !important;
+  tr{
+      border-bottom: 1px solid #e4e4e4;
+      &:last-child{
+          border-bottom:0;
+      }
+  }
+  th{
+      background-color: #e4e4e4;
+  }
+  th, td{
+      padding:10px;
+      border: 0 !important;
+
+  }
+}

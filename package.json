@@ -5,13 +5,24 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@apollo/client": "^3.6.9",
+    "@next/eslint-plugin-next": "^13.1.1",
     "graphql": "^16.5.0",
+    "i": "^0.3.7",
     "next": "12.2.0",
+    "npm": "^9.2.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^4.7.1",
+    "sass": "^1.57.1",
+    "styled-normalize": "^8.0.7"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^8.5.0"
   }
+  
 }

@@ -1,0 +1,46 @@
+.heroWrapper {
+  max-width: $container_width;
+  padding: 20px;
+  margin: 0 auto;
+
+  .helloImage {
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
+  }
+
+  .sectionTitle {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 72px;
+    max-width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .sectionText {
+    font-size: 16px;
+    line-height: 30px;
+    max-width: 100%;
+    margin-bottom: 16px;
+  }
+}
+.bgAnimation {
+  position: relative;
+
+  .avatar {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .BgAnimation__svg {
+    height:500px;
+    width: 500px;
+  }
+}
+// #heroParent {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
