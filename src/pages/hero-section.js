@@ -1,25 +1,24 @@
-import Head from "next/head";
-import Link from "next/link";
-import { gql } from "@apollo/client";
+import Head from 'next/head';
+import { gql } from '@apollo/client';
 
-import { getApolloClient } from "lib/apollo-client";
+import { getApolloClient } from 'lib/apollo-client';
 
-import styles from "../styles/Home.module.css";
+import styles from '../styles/Home.module.css';
 
-export default function Home({ page, posts, pageData }) {
-  const { description, title, image } = pageData;
+export default function Home({ posts, pageData }) {
+  const { herodescription, herotitle } = pageData;
   return (
     <div className={styles.container}>
       <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
+        <title>{herotitle}</title>
+        <meta name="description" content={herodescription} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>{title}</h1>
+        <h1 className={styles.title}>{herotitle}</h1>
 
-        <p className={styles.description}>{description}</p>
+        <p className={styles.description}>{herodescription}</p>
 
         <ul className={styles.grid}>
           {!posts ||
@@ -40,12 +39,12 @@ export async function getStaticProps() {
   const data = await apolloClient.query({
     query: gql`
       {
-        page(id: "cG9zdDoxMA==") {
+        page(id: "cG9zdDo3") {
           heroSection {
-            description
+            herodescription
+            herotitle
             fieldGroupName
-            title
-            image {
+            heroimage {
               altText
               title(format: RAW)
               sourceUrl
@@ -53,7 +52,7 @@ export async function getStaticProps() {
           }
         }
       }
-    `,
+    `
   });
 
   const pageData = data?.data.page.heroSection;
@@ -72,7 +71,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      pageData,
-    },
+      pageData
+    }
   };
 }

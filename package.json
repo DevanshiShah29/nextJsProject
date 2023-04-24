@@ -5,8 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "prod": "next start",
+    "lintNext": "next lint",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix",
+    "format": "prettier --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" --config ./.prettierrc"
   },
   "dependencies": {
     "@apollo/client": "^3.6.9",
@@ -18,11 +21,16 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
+    "react-slick": "^0.29.0",
     "sass": "^1.57.1",
+    "slick-carousel": "^1.8.1",
     "styled-normalize": "^8.0.7"
   },
   "devDependencies": {
-    "eslint-config-prettier": "^8.5.0"
+    "eslint": "^8.39.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "prettier": "^2.8.8"
   }
-  
 }

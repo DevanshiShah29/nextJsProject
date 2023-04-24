@@ -1,0 +1,64 @@
+.footerWrapper {
+  background: $background;
+  max-width: $container_width;
+  padding: 20px;
+  margin: 0 auto;
+  .footerMain {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    @include mq('phone'){
+       display: block;
+       text-align: center;
+    }
+
+    .nav-logo {
+      color: $purple;
+      align-items: center;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 40px;
+      font-weight: 700;
+      font-family: $logo-font;
+      padding-bottom: 20px;
+    }
+
+    .footerLeft{
+        max-width: 400px;
+        line-height: 20px;
+    }
+
+    .socialLinks {
+      font-size: 16px;
+      font-weight: 500;
+      text-align: right;
+      padding-bottom: 20px;
+      @include mq('phone'){
+        width:100%;
+        text-align: center;
+        padding-top: 20px;
+     }
+    }
+
+    .socialIcons {
+      padding-left: 20px;
+
+      svg {
+        transition: 0.3s ease;
+        color: white;
+        border-radius: 50px;
+
+        &:hover {
+          background-color: #212d45;
+          transform: scale(1.2);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .copyright {
+    text-align: center;
+    font-size: 16px;
+}
+}

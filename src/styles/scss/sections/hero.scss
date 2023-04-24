@@ -1,6 +1,6 @@
 .heroWrapper {
   max-width: $container_width;
-  padding: 20px;
+  padding: 20px 0;
   margin: 0 auto;
 
   .helloImage {
@@ -14,7 +14,7 @@
     font-size: 48px;
     line-height: 72px;
     max-width: 100%;
-    margin-bottom: 25px;
+    margin: 25px 0;
   }
 
   .sectionText {
@@ -30,13 +30,22 @@
   .avatar {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 46%;
     transform: translate(-50%, -50%);
+    @include mq('phone') {
+      left: 50%;
+      top: 50%;
+   }
   }
 
   .BgAnimation__svg {
     height:500px;
-    width: 500px;
+    width: 100%;
+
+    @include mq('phone') {
+      width: 100%;
+      height: unset;
+   }
   }
 }
 // #heroParent {

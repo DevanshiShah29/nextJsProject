@@ -1,21 +1,12 @@
-import Link from "next/link";
-import React from "react";
-import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
-import { DiCssdeck } from "react-icons/di";
-import {
-  Container,
-  Div1,
-  Div2,
-  Div3,
-  NavLink,
-  SocialIcons,
-} from "./HeaderStyles";
+import Link from 'next/link';
+import React from 'react';
+import { DiCssdeck } from 'react-icons/di';
+import { NavLink } from './HeaderStyles';
 
 const Header = () => {
   const [click, setClick] = React.useState(false);
 
   const handleClick = () => setClick(!click);
-  const Close = () => setClick(false);
 
   return (
     <div className="headerWrapper">
@@ -28,14 +19,13 @@ const Header = () => {
             </NavLink>
           </div>
           <div>
-            <ul className={click ? "nav-menu active" : "nav-menu"}>
+            <ul className={click ? 'nav-menu active' : 'nav-menu'}>
               <li className="nav-item">
                 <Link
                   href="#home"
                   className="nav-links"
                   onClick={click ? handleClick : null}
-                  activeClassName="active"
-                >
+                  activeClassName="active">
                   Home
                 </Link>
               </li>
@@ -44,8 +34,7 @@ const Header = () => {
                   href="#about"
                   className="nav-links"
                   onClick={click ? handleClick : null}
-                  activeClassName="active"
-                >
+                  activeClassName="active">
                   About
                 </Link>
               </li>
@@ -54,8 +43,7 @@ const Header = () => {
                   href="#skills"
                   className="nav-links"
                   onClick={click ? handleClick : null}
-                  activeClassName="active"
-                >
+                  activeClassName="active">
                   Skills
                 </Link>
               </li>
@@ -64,8 +52,7 @@ const Header = () => {
                   href="#projects"
                   className="nav-links"
                   onClick={click ? handleClick : null}
-                  activeClassName="active"
-                >
+                  activeClassName="active">
                   Projects
                 </Link>
               </li>
@@ -74,18 +61,17 @@ const Header = () => {
                   href="#contacts"
                   className="nav-links"
                   onClick={click ? handleClick : null}
-                  activeClassName="active"
-                >
+                  activeClassName="active">
                   Contacts
                 </Link>
               </li>
-              <li >
+              <li>
                 <DiCssdeck size="3rem" />
               </li>
             </ul>
 
             <div className="nav-icon" onClick={handleClick}>
-              <i className={click ? "fa fa-times" : "fa fa-bars"}></i>
+              <i className={click ? 'fa fa-times' : 'fa fa-bars'}></i>
             </div>
           </div>
         </div>

@@ -1,16 +1,16 @@
-import Head from "next/head";
-import Link from "next/link";
-import { gql } from "@apollo/client";
-import { getApolloClient } from "lib/apollo-client";
-import { Layout } from "../layout/Layout";
-import BgAnimation from "../components/BackgroundAnimation/BackgroundAnimation";
+import Head from 'next/head';
+import Link from 'next/link';
+import { gql } from '@apollo/client';
+import { getApolloClient } from 'lib/apollo-client';
+import { Layout } from '../layout/Layout';
+import BgAnimation from '../components/BackgroundAnimation/BackgroundAnimation';
+import Hero from '../components/Hero/Hero';
+import About from '../components/About/About';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import styles from '../styles/Home.module.css';
 
-import Hero from "../components/Hero/Hero";
-
-import styles from "../styles/Home.module.css";
-import { Section } from "../styles/GlobalComponents";
-
-export default function Home({ page, posts, heroSectionData }) {
+export default function Home({ page, posts, heroSectionData, aboutPageData, aboutSliderData }) {
   const { title, description } = page;
   return (
     <Layout>
@@ -21,6 +21,14 @@ export default function Home({ page, posts, heroSectionData }) {
           </div>
           <div className="col-md-6">
             <BgAnimation />
+          </div>
+        </div>
+      </div>
+
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+            <About aboutSectionData={aboutPageData} aboutSliderData={aboutSliderData} />
           </div>
         </div>
       </div>
@@ -47,14 +55,14 @@ export default function Home({ page, posts, heroSectionData }) {
                       <a>
                         <h3
                           dangerouslySetInnerHTML={{
-                            __html: post.title,
+                            __html: post.title
                           }}
                         />
                       </a>
                     </Link>
                     <div
                       dangerouslySetInnerHTML={{
-                        __html: post.excerpt,
+                        __html: post.excerpt
                       }}
                     />
                   </li>
@@ -80,12 +88,12 @@ export async function getStaticProps() {
   const data = await apolloClient.query({
     query: gql`
       {
-        page(id: "cG9zdDoxMA==") {
+        page(id: "cG9zdDo3") {
           heroSection {
-            description
+            herodescription
+            herotitle
             fieldGroupName
-            title
-            image {
+            heroimage {
               altText
               title(format: RAW)
               sourceUrl
@@ -107,7 +115,7 @@ export async function getStaticProps() {
           }
         }
       }
-    `,
+    `
   });
 
   const posts = data?.data.posts.edges
@@ -115,21 +123,54 @@ export async function getStaticProps() {
     .map((post) => {
       return {
         ...post,
-        path: `/posts/${post.slug}`,
+        path: `/posts/${post.slug}`
       };
     });
 
   const page = {
-    ...data?.data.generalSettings,
+    ...data?.data.generalSettings
   };
 
   const heroSectionData = data?.data.page.heroSection;
+
+  const aboutData = await apolloClient.query({
+    query: gql`
+      {
+        page(id: "cG9zdDo3") {
+          aboutsection {
+            title
+            button
+            description
+          }
+        }
+        aboutSliders {
+          nodes {
+            title
+            uri
+            featuredImage {
+              node {
+                altText
+                sourceUrl
+                title
+                uri
+              }
+            }
+          }
+        }
+      }
+    `
+  });
+
+  const aboutPageData = aboutData?.data.page.aboutsection;
+  const aboutSliderData = aboutData?.data.aboutSliders;
 
   return {
     props: {
       page,
       posts,
-      heroSectionData
-    },
+      heroSectionData,
+      aboutPageData,
+      aboutSliderData
+    }
   };
 }

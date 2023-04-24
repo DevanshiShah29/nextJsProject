@@ -1,0 +1,57 @@
+.aboutWrapper {
+  max-width: $container_width;
+  padding: 20px 0;
+  margin: 0 auto;
+
+  .sectionTitle {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 72px;
+    max-width: 100%;
+    margin: 25px 0;
+  }
+
+  .sectionText {
+    font-size: 16px;
+    line-height: 30px;
+    max-width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .slick-slider {
+    .slick-prev,
+    .slick-next {
+      display: none !important;
+    }
+    .slick-slide {
+      padding: 20px;
+      img {
+        height: 225px;
+        object-fit: cover;
+        border: 10px solid $offWhite;
+        border-radius: 5px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      }
+    }
+  }
+  .buttonWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    .button {
+        background: $purple;
+        color: $offWhite;
+        font-size: 18px;
+        cursor: pointer;
+        padding: 17px 30px 17px 30px;
+    
+        svg {
+            vertical-align: bottom;
+            stroke-width: 50px;
+        }
+      }
+  }
+  
+}
