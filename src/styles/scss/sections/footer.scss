@@ -1,5 +1,5 @@
 .footerWrapper {
-  background: $background;
+  background: var(--backgrond);
   max-width: $container_width;
   padding: 20px;
   margin: 0 auto;
@@ -13,7 +13,7 @@
     }
 
     .nav-logo {
-      color: $purple;
+      color: var(--purple);
       align-items: center;
       cursor: pointer;
       text-decoration: none;
@@ -45,7 +45,7 @@
 
       svg {
         transition: 0.3s ease;
-        color: white;
+        color: var(--white);
         border-radius: 50px;
 
         &:hover {

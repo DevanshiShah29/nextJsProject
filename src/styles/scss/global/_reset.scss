@@ -36,10 +36,10 @@ body {
   font-family: $font_family !important;
   font-weight: $regular;
   font-size: $medium;
-  color: $offWhite !important;
+  color: var(--offWhite) !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: $background !important;
+  background-color: var(--background) !important;
   @include mq('phone'){
     font-size: 14px;
   }
@@ -79,7 +79,7 @@ a{
   outline: none;
   transition: all 200ms linear;
   text-decoration: none;
-  color: $black;
+  color: var(--black);
 }
 
 

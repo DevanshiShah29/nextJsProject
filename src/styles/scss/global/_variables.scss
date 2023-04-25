@@ -4,22 +4,31 @@
 // container Width  
 $container_width : 1280px;
 
+:root{
+  --black : #1d1d1b;
+  --white : #ffffff;
+  --offWhite : #e8e8e8;
+  --background : #0F1624;
+  --purple : #945DD6;
+  --orange: #F46737;
+  --blue: #13ADC7;
 
-// Color Pallete
-$black : #1d1d1b;
-$white : #ffffff;
-$border : #3C3C3A;
-$offWhite : #e8e8e8;
-$background : #0F1624;
-$purple : #945DD6;
-$orange: #F46737;
-$blue: #13ADC7;
+  --lightMode-black : #fffffd;
+  --lightMode-white : #1b1b1b;
+  --lightMode-border : #d8d8d4;
+  --lightMode-offWhite : #747474;
+}
+
+body.light-mode{
+  --black : var(--lightMode-black);
+  --white: var(--lightMode-white);
+  --offWhite: var(--lightMode-offWhite);
+  --background: var(--lightMode-background);
+}
 
 // Fonts
 $font-family: 'Roboto', sans-serif;
 $logo-font: 'Dancing Script', cursive;
-
-
 
 // font-weights 
 $light : 300;

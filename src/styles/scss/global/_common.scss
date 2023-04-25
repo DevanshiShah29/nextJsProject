@@ -15,7 +15,7 @@ hr {
 .button {
     @include radius(5px);
     border: none;
-    color: $offWhite;
+    color: var(--offWhite);
     font-weight: $bold;
     font-size: $small;
     padding: 17px 20px 17px 60px;

@@ -28,7 +28,7 @@
       img {
         height: 225px;
         object-fit: cover;
-        border: 10px solid $offWhite;
+        border: 1px solid var(--offWhite);
         border-radius: 5px;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       }
@@ -41,8 +41,8 @@
     padding: 20px;
 
     .button {
-        background: $purple;
-        color: $offWhite;
+        background: var(--purple);
+        color: var(--offWhite);
         font-size: 18px;
         cursor: pointer;
         padding: 17px 30px 17px 30px;

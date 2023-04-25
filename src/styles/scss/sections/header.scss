@@ -1,5 +1,5 @@
 .headerWrapper {
-  background: $background;
+  background: var(--background);
   max-width: $container_width;
   padding: 20px;
   margin: 0 auto;
@@ -33,7 +33,7 @@
   }
 
   .nav-logo {
-    color: $purple;
+    color: var(--purple);
     align-items: center;
     cursor: pointer;
     text-decoration: none;
@@ -51,7 +51,7 @@
   }
 
   .nav-links {
-    color: $offWhite;
+    color: var(--offWhite);
     text-decoration: none;
     padding: 0.5rem 1rem;
     height: 100%;
@@ -61,6 +61,13 @@
     margin-left: 1rem;
   }
 
+  .nav-item-switch {
+    line-height: 40px;
+    margin-right: 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
   .nav-item {
     line-height: 40px;
     margin-right: 20px;
@@ -68,7 +75,7 @@
     cursor: pointer;
 
     a {
-      color: $offWhite;
+      color: var(--offWhite);
     }
   }
 
@@ -83,13 +90,17 @@
 
   .nav-item:hover:after {
     width: 100%;
-    background: $purple;
+    background: var(--purple);
   }
 
   .nav-item.active {
-    color: $purple;
-    border: 1px solid $purple;
+    color: var(--purple);
+    border: 1px solid var(--purple);
   }
+
+  .ant-switch-checked{
+    background: var(--purple) !important;
+ }
 
   .nav-icon {
     display: none;
@@ -100,7 +111,7 @@
       display: flex;
       flex-direction: column;
       width: 100%;
-      border-top: 1pxsolid $offWhite;
+      border-top: 1px solid var(--offWhite);
       position: absolute;
       top: 80px;
       left: -110%;
@@ -116,7 +127,7 @@
       z-index: 1;
     }
     .nav-item .active {
-      color: $purple;
+      color: var(--purple);
       border: none;
     }
     .nav-links {
@@ -133,7 +144,7 @@
       transform: translate(-100%, 60%);
       font-size: 1.8rem;
       cursor: pointer;
-      color: $purple;
+      color: var(--purple);
     }
   }
 }

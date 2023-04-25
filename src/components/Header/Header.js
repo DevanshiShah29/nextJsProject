@@ -1,12 +1,21 @@
 import Link from 'next/link';
 import React from 'react';
-import { DiCssdeck } from 'react-icons/di';
 import { NavLink } from './HeaderStyles';
+import { Space, Switch } from 'antd';
 
 const Header = () => {
   const [click, setClick] = React.useState(false);
 
   const handleClick = () => setClick(!click);
+
+  const handleThemeChange = (checked, event) => {
+    console.log(checked, event, 'checked');
+    if (!event) {
+      document.body.classList.add('light-mode');
+    } else {
+      document.body.classList.remove('light-mode');
+    }
+  };
 
   return (
     <div className="headerWrapper">
@@ -25,7 +34,8 @@ const Header = () => {
                   href="#home"
                   className="nav-links"
                   onClick={click ? handleClick : null}
-                  activeClassName="active">
+                  activeClassName="active"
+                >
                   Home
                 </Link>
               </li>
@@ -34,7 +44,8 @@ const Header = () => {
                   href="#about"
                   className="nav-links"
                   onClick={click ? handleClick : null}
-                  activeClassName="active">
+                  activeClassName="active"
+                >
                   About
                 </Link>
               </li>
@@ -43,7 +54,8 @@ const Header = () => {
                   href="#skills"
                   className="nav-links"
                   onClick={click ? handleClick : null}
-                  activeClassName="active">
+                  activeClassName="active"
+                >
                   Skills
                 </Link>
               </li>
@@ -52,7 +64,8 @@ const Header = () => {
                   href="#projects"
                   className="nav-links"
                   onClick={click ? handleClick : null}
-                  activeClassName="active">
+                  activeClassName="active"
+                >
                   Projects
                 </Link>
               </li>
@@ -61,12 +74,20 @@ const Header = () => {
                   href="#contacts"
                   className="nav-links"
                   onClick={click ? handleClick : null}
-                  activeClassName="active">
+                  activeClassName="active"
+                >
                   Contacts
                 </Link>
               </li>
-              <li>
-                <DiCssdeck size="3rem" />
+              <li className="nav-item-switch">
+                <Space direction="vertical">
+                  <Switch
+                    checkedChildren="Dark"
+                    unCheckedChildren="Light"
+                    defaultChecked
+                    onChange={(event) => handleThemeChange(event, event)}
+                  />
+                </Space>
               </li>
             </ul>
 
@@ -76,35 +97,6 @@ const Header = () => {
           </div>
         </div>
       </nav>
-
-      {/* <Div2>
-        <li>
-          <Link href="#projects">
-            <NavLink>Projects</NavLink>
-          </Link>
-        </li>
-        <li>
-          <Link href="#tech">
-            <NavLink>Technologies</NavLink>
-          </Link>
-        </li>
-        <li>
-          <Link href="#about">
-            <NavLink>About</NavLink>
-          </Link>
-        </li>
-      </Div2> */}
-      {/* <Div3>
-      <SocialIcons href="https://google.com">
-        <AiFillGithub size="3rem" />
-      </SocialIcons>
-      <SocialIcons href="https://google.com">
-        <AiFillLinkedin size="3rem" />
-      </SocialIcons>
-      <SocialIcons href="https://google.com">
-        <AiFillInstagram size="3rem" />
-      </SocialIcons>
-    </Div3> */}
     </div>
   );
 };
