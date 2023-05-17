@@ -9,11 +9,13 @@ import About from '../components/About/About';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styles from '../styles/Home.module.css';
+import AnimatedCursor from '../layout/AnimatedCursor';
 
 export default function Home({ page, posts, heroSectionData, aboutPageData, aboutSliderData }) {
   const { title, description } = page;
   return (
     <Layout>
+      <AnimatedCursor />
       <div className="container">
         <div className="row">
           <div className="col-md-6">
